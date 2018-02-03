@@ -1,0 +1,30 @@
+{
+  "name": "werewolfescape",
+  "version": "1.0.0",
+  "description": "hello",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yixuanwang/werewolfEscape.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/yixuanwang/werewolfEscape/issues"
+  },
+  "homepage": "https://github.com/yixuanwang/werewolfEscape#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "cookie-parser": "^1.4.3",
+    "cookie-session": "^2.0.0-beta.3",
+    "ejs": "^2.5.7",
+    "express": "^4.16.2",
+    "jquery": "^3.3.1",
+    "morgan": "^1.9.0",
+    "sequelize": "^4.32.2",
+    "sqlite3": "^3.1.13"
+  }
+}
