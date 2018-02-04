@@ -6,6 +6,8 @@ var logger = require('morgan');
 var cookieSession = require('cookie-session')
 var cookieParser = require('cookie-parser');
 var path = require('path');
+var passport = app.passport = require('passport');
+
 
 const sequelize = app.sequelize = require('./configs/db.js');
 
@@ -37,13 +39,19 @@ app.use(cookieSession({
 app.use(cookieParser(['TOTALLY', 'NOT', 'SECRET']));
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.use(passport.initialize());
+ 
+app.use(passport.session()); // persistent login sessions
+
 // load routes
 require("./routes");
 
 
 // load models
-require("./models/index.js");
+var db = require("./models/index.js");
 
+//load passport strategies
+require('./configs/passport.js')(passport, db.User);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -60,7 +68,9 @@ app.use(function(err, req, res, next) {
 
   // render the error page
   res.status(err.status || 500);
-  res.render('error');
+  console.log(err.message);
+  res.send('shit happened');
+  // res.render('error');
 });
 
 app.listen(3000, function () {
