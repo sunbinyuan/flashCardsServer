@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html>
  
 <head>
@@ -38,4 +38,64 @@
 
 </body>
  
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cardless - Flashcards Done Right</title>
+
+    <!-- Materialize CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+
+    <!-- Icons CSS -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body class="cards-body">
+
+<div class="cards-container">
+
+    <div class="flashcard1">
+        <div class="flash-card card">
+            <div class="row">
+                <div class="col s12 m6">
+                    <div class="q-card">
+                        <h5 class="card-header"><b>Question</b></h5>
+                        <textarea class="card-textarea" name="question" id="question"></textarea>
+                    </div>
+                </div>
+                <div class="col s12 m6">
+                    <div class="a-card">
+                        <h5 class="card-header"><b>Answer</b></h5>
+                        <textarea class="card-textarea" name="answer" id="answer"></textarea>
+                    </div>
+                </div>
+                <input id="subjectId" name="subjectId" value="<%= subject.id%>" type="hidden" /> 
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<!-- Icons -->
+<i class="large cancel-icon material-icons">cancel</i>
+<i class="large add-icon material-icons">add_circle_outline</i>
+<p class="add-text">Add to Deck</p>
+
+</body>
+
+<!-- jQuery JS -->
+<script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+
+<!-- Materialize JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+
+<!-- Custom JS -->
+<script src="/js/app.js"></script>
+
 </html>
