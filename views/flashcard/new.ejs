@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+ 
+<head>
+    <title></title>
+</head>
+ 
+<body>
+
+	<h1>Flash Cards</h1>
+
+	<form method="POST" action="<%= '/subject/' + subject.id  + '/flashcard'%>">
+	  <div class="field">
+	    <label for="subject"></label>
+	    <input type="text" name="question" id="question" />
+	    <input type="text" name="answer" id="answer" />
+	    <input type="checkbox" name="dovalidate" id="dovalidate" />
+	  </div>
+
+	  <div class="actions">
+	    <input type="submit"/> 
+	  </div>
+	</form>
+
+
+	<a href="<%= '/subject/' + subject.id %>">Back</a>
+
+</body>
+ 
+</html>

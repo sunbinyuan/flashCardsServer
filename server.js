@@ -48,7 +48,11 @@ require("./routes");
 
 
 // load models
-var db = require("./models/index.js");
+var db = app.db = require("./models/");
+
+var getDB = function() {
+  return db;
+}
 
 //load passport strategies
 require('./configs/passport.js')(passport, db.User);

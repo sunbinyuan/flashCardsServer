@@ -1,14 +1,13 @@
 var app = require('../server.js');
 
 exports.create = app.passport.authenticate('register', {
-        successRedirect: '/flashcard',
+        successRedirect: '/subject',
         failureRedirect: '/user/register'
     }
- 
 );
 
 exports.authenticate = app.passport.authenticate('login', {
-        successRedirect: '/flashcard',
+        successRedirect: '/subject',
         failureRedirect: '/user/login'
 });
 

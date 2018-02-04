@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+ 
+<head>
+    <title></title>
+</head>
+ 
+<body>
+
+	<h1>Subjects</h1>
+
+	<table>
+	  <thead>
+	    <tr>
+	      <th>Name</th>
+	      <th colspan="3"></th>
+	    </tr>
+	  </thead>
+
+	  <tbody>
+	    <% subjects.forEach(function(subject) { %>
+	      <tr>
+	        <td><%= subject.subject %></td>
+	        <td><a href="<%='/subject/' + subject.id %>">Show</a></td>
+	        <td><a href="<%='/subject/' + subject.id + '/edit'%>">Edit</a></td>
+	        <td><a href="<%='/subject/' + subject.id + '/destroy'%>">Destroy</a></td>
+	      </tr>
+		<% });  %>
+
+	  </tbody>
+	</table>
+
+	<br>
+
+	<a href="<%= '/subject/new' %>">New subject</a>
+
+</body>
+ 
+</html>

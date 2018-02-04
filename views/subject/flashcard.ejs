@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+ 
+<head>
+    <title></title>
+</head>
+ 
+<body>
+
+	<h1>Flash Cards</h1>
+
+	<table>
+	  <thead>
+	    <tr>
+	      <th>Question</th>
+	      <th>Answer</th>
+	      <th>Validate?</th>
+	      <th colspan="3"></th>
+	    </tr>
+	  </thead>
+
+	  <tbody>
+	    <% flashcards.forEach(function(flashcard) { %>
+	      <tr>
+	        <td><%= flashcard.question %></td>
+	        <td><%= flashcard.answer %></td>
+	        <td><%= flashcard.dovalidate %></td>
+	        <td><a href="<%='/subject/' + subject.id + '/flashcard/' + flashcard.id + '/destroy'%>">Destroy</a></td>
+	      </tr>
+		<% });  %>
+
+	  </tbody>
+	</table>
+
+	<br>
+
+	<a href="<%= '/subject/' + subject.id + '/flashcard/new' %>">New flash card</a>
+
+</body>
+ 
+</html>
