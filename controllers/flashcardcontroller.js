@@ -100,6 +100,9 @@ exports.all_json = function(req, res) {
 	var subject = req.query.subject;
 	app.db.Subject.findOne({where:{subject: subject}})
 		.then(function(subject) {
+			if (!subject) {
+				return res.json('no such subject');
+			}
 			subject.getFlashcards()
 				.then(function (flashcards) {
 					var data = [];
